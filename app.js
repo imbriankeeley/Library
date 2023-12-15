@@ -55,13 +55,15 @@ function addBookToLibrary() {
     render();
 }
 
+let newBookForm = document.querySelector('#add-book-form');
+
 let newBookbtn = document.querySelector("#add-book")
 newBookbtn.addEventListener('click', function() {
-    let newBookForm = document.querySelector('#add-book-form');
     newBookForm.style.display = 'block';
 })
 
 document.querySelector('#add-book-form').addEventListener("submit", function() {
     event.preventDefault();
     addBookToLibrary()
+    newBookForm.style.display = 'none';
 })
